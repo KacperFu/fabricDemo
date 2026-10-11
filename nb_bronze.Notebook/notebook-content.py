@@ -130,6 +130,53 @@ print(spark.table("gold_dim_customer").count(), spark.table("gold_dim_product").
 
 # CELL ********************
 
+from pyspark.sql import functions as F
+
+df = (spark.read.format("csv")
+      .option("header", "true")
+      .option("inferSchema", "true")
+      .load("Files/bronze/sales/sales.csv"))
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+
+display(df.limit(20))
+df.printSchema()
+print(df.count())
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+from pyspark.sql.types import (StructType, StructField, StringType,
+                               IntegerType, DoubleType, DateType)
+
+schema = StructType([
+    StructField("SalesOrderNumber", StringType()),
+    StructField("SalesOrderLineNumber", IntegerType()),
+    StructField("OrderDate", DateType()),
+    StructField("CustomerName", StringType()),
+    StructField("EmailAddress", StringType()),
+    StructField("Item", StringType()),
+    StructField("Quantity", IntegerType()),
+    StructField("UnitPrice", DoubleType()),
+    StructField("TaxAmount", DoubleType()),
+])
+df_schema = (spark.read.format("csv").option("header", "true")
+             .schema(schema).load("Files/bronze/sales/sales.csv"))
+df_schema.printSchema()
 
 # METADATA ********************
 

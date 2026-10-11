@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "c93a88b8-815e-4a16-94fa-c7fddf94efb0",
+        "clusterUri": "https://trd-x4jpjdvzvfgsmwe2nw.z5.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "1d3cd48f-afaf-4d46-8b9f-eef58c36574f"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "f8944651-7f4d-4fe8-9882-84b182897aa0",
+        "content": "bikes\n| where ingestion_time() > ago(5m)\n| where No_Bikes < 5\n| project BikepointID, Street, Neighbourhood, No_Bikes\n",
+        "title": "Tab",
+        "dataSourceId": "c93a88b8-815e-4a16-94fa-c7fddf94efb0"
+      }
+    ],
+    "querysetType": "Embedded"
+  }
+}
