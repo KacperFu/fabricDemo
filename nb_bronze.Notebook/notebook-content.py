@@ -123,17 +123,3 @@ print(spark.table("gold_dim_customer").count(), spark.table("gold_dim_product").
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
-
-# MARKDOWN ********************
-
-# Testowa komorka dla gita
-
-# CELL ********************
-
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
