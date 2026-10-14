@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventstream",
-    "displayName": "es_bikes"
+    "type": "Lakehouse",
+    "displayName": "lh_sales"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "aefc625e-00bf-b63d-455c-d40908a0afee"
+    "logicalId": "d1c5b29b-bfd5-b2b3-4526-b973d7e6b174"
   }
 }

@@ -1,41 +1,77 @@
 table dim_product
-	lineageTag: 3adc76e3-ed9c-4cfd-a5fd-f8c37294a4d8
+	lineageTag: 10b9e1c1-0c07-41be-86ac-841513d98fa8
 	sourceLineageTag: [dbo].[dim_product]
 
-	column ProductID
+	column ProductKey
 		dataType: int64
 		formatString: 0
-		lineageTag: 367d5fd2-e5fb-45bc-87e7-7939c05d97fd
-		sourceLineageTag: ProductID
+		lineageTag: c695175f-7ed2-433c-ac6d-9939e41ded48
+		sourceLineageTag: ProductKey
 		summarizeBy: none
-		sourceColumn: ProductID
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCode
+		dataType: string
+		lineageTag: c1c0f34c-3d13-43af-8b48-3a617d6e6c71
+		sourceLineageTag: ProductCode
+		summarizeBy: none
+		sourceColumn: ProductCode
 
 		annotation SummarizationSetBy = Automatic
 
 	column ProductName
 		dataType: string
-		lineageTag: bcb3789d-693a-4153-b258-a1c6d1476a57
+		lineageTag: e72bc964-43c4-400e-a8d2-2e96acd4d767
 		sourceLineageTag: ProductName
 		summarizeBy: none
 		sourceColumn: ProductName
 
 		annotation SummarizationSetBy = Automatic
 
+	column Brand
+		dataType: string
+		lineageTag: 7a6c5f52-b41a-43fd-b7b8-49491b610c57
+		sourceLineageTag: Brand
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 5790c404-da7b-4290-aad0-14e5958390c5
+		sourceLineageTag: Color
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
 	column Category
 		dataType: string
-		lineageTag: c801a1cc-19f6-4152-9609-bc29a8013fba
+		lineageTag: bbadbde8-e4ce-47b0-827b-63ee40e00a30
 		sourceLineageTag: Category
 		summarizeBy: none
 		sourceColumn: Category
 
 		annotation SummarizationSetBy = Automatic
 
-	column ListPrice
-		dataType: double
-		lineageTag: 3f2948a2-63f4-4c0b-a9c2-a033943f42c4
-		sourceLineageTag: ListPrice
+	column Subcategory
+		dataType: string
+		lineageTag: 70e6b3e3-7fa9-4c3d-9e01-741befce3728
+		sourceLineageTag: Subcategory
 		summarizeBy: none
-		sourceColumn: ListPrice
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: double
+		lineageTag: 5f39211b-a960-44c6-b5e4-57277836e840
+		sourceLineageTag: Price
+		summarizeBy: none
+		sourceColumn: Price
 
 		annotation SummarizationSetBy = Automatic
 
@@ -46,5 +82,5 @@ table dim_product
 		source
 			entityName: dim_product
 			schemaName: dbo
-			expressionSource: 'DirectLake — wh_sales'
+			expressionSource: 'DirectLake - wh_sales'
 

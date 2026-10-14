@@ -1,9 +1,11 @@
-expression 'DirectLake — wh_sales' =
+expression 'DirectLake - wh_sales' =
 		let
-		    Źródło = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/5b27cda4-905d-45b2-aecb-c0634805362f/1577042b-8cb5-410f-b60f-5640a8cd734e", [HierarchicalNavigation=true])
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/b1104717-e924-476e-b65a-02af81596bcf/d2a53e0e-df19-4b4b-91d3-d4a9c7e6e8f7", [HierarchicalNavigation=true])
 		in
-		    Źródło
-	lineageTag: df8ae67e-05f0-49fc-a2a6-49ae65e53906
+		    Source
+	lineageTag: 52fff57e-29f1-4eba-b62f-8423c983bec5
 
 	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[snap_fix]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[demo_snap]"}},"objectType":"Table"}]
 

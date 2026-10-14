@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "KQLDashboard",
-    "displayName": "rt_dashboard",
-    "description": "rt_dashboard"
+    "type": "Notebook",
+    "displayName": "nb_01_bronze",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "f1da9940-f791-9940-46d9-67845cb32d06"
+    "logicalId": "3594d7ed-4380-a578-4f37-90b8389b376f"
   }
 }

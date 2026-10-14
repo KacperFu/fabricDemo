@@ -1,32 +1,78 @@
 table dim_customer
-	lineageTag: 493b226f-569e-4b21-b280-c2572b831e62
+	lineageTag: 9e902eb0-31ad-4fe9-8c0f-06d02ae9ced5
 	sourceLineageTag: [dbo].[dim_customer]
-
-	column EmailAddress
-		dataType: string
-		lineageTag: 2a51c40a-6641-4093-87e7-b4e78f94a146
-		sourceLineageTag: EmailAddress
-		summarizeBy: none
-		sourceColumn: EmailAddress
-
-		annotation SummarizationSetBy = Automatic
-
-	column CustomerName
-		dataType: string
-		lineageTag: f3e859b5-8b0c-4c17-b915-9e68ea3e5e8a
-		sourceLineageTag: CustomerName
-		summarizeBy: none
-		sourceColumn: CustomerName
-
-		annotation SummarizationSetBy = Automatic
 
 	column CustomerKey
 		dataType: int64
 		formatString: 0
-		lineageTag: 48efbcf4-e71b-4b6c-ab41-297c5539874b
+		lineageTag: 06e4f9c6-96e1-4fbe-bdaf-b1c108a0cb55
 		sourceLineageTag: CustomerKey
 		summarizeBy: none
 		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: dec12aed-1279-468e-954f-1c793714af3f
+		sourceLineageTag: Name
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 7946b74d-9268-4bc9-bb4f-4ae2ad51081d
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 1b1fab31-d11b-4529-9385-3858623472e7
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: c687a7ac-e337-475a-a760-e70f477f21f6
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: fac1d428-b34c-4cc4-a26d-16bcce5b2eda
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continent
+		dataType: string
+		lineageTag: fec883d3-f7c4-4414-a15e-5e5614dac0f3
+		sourceLineageTag: Continent
+		summarizeBy: none
+		sourceColumn: Continent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Birthday
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9579180-6537-4b3b-9145-0a1056784ca0
+		sourceLineageTag: Birthday
+		summarizeBy: none
+		sourceColumn: Birthday
 
 		annotation SummarizationSetBy = Automatic
 
@@ -35,5 +81,5 @@ table dim_customer
 		source
 			entityName: dim_customer
 			schemaName: dbo
-			expressionSource: 'DirectLake — wh_sales'
+			expressionSource: 'DirectLake - wh_sales'
 

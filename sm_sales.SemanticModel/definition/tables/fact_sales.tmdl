@@ -1,103 +1,104 @@
 table fact_sales
-	lineageTag: 148ab222-992f-4c70-aa53-1b34003ea44e
+	lineageTag: 4918ea18-b6cc-4eec-a140-8b4f4382cf19
 	sourceLineageTag: [dbo].[fact_sales]
 
-	measure Revenue_ = SUM(fact_sales[Revenue])
-		lineageTag: 2048cfdd-53e2-4c46-8195-ddb924ad4ccf
-
-		changedProperty = Name
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure Orders_ = DISTINCTCOUNT(fact_sales[SalesOrderNumber])
+	column OrderKey
+		dataType: int64
 		formatString: 0
-		lineageTag: 38add004-af73-41d8-8f50-c16a1a4f2863
-
-		changedProperty = Name
-
-	measure AvgOrderValue = DIVIDE([Revenue_],[Orders_],BLANK())
-		lineageTag: 94a808c7-feb7-4a2a-b3dd-9e6792db0306
-
-		changedProperty = Name
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column SalesOrderNumber
-		dataType: string
-		lineageTag: d43c8322-27e8-40b0-a6e7-c7ae81ca9e73
-		sourceLineageTag: SalesOrderNumber
-		summarizeBy: none
-		sourceColumn: SalesOrderNumber
+		lineageTag: 77ad3e7c-104b-46ed-8ede-3e3d2ad4b4ee
+		sourceLineageTag: OrderKey
+		summarizeBy: count
+		sourceColumn: OrderKey
 
 		annotation SummarizationSetBy = Automatic
 
-	column SalesOrderLineNumber
+	column LineNumber
 		dataType: int64
 		formatString: 0
-		lineageTag: 5b483f6f-1413-4db2-a566-15300f1bb657
-		sourceLineageTag: SalesOrderLineNumber
+		lineageTag: 632661fc-e01c-48eb-8b88-38f172558c29
+		sourceLineageTag: LineNumber
 		summarizeBy: sum
-		sourceColumn: SalesOrderLineNumber
-
-		annotation SummarizationSetBy = Automatic
-
-	column CustomerKey
-		dataType: int64
-		formatString: 0
-		lineageTag: 8c4ed29e-0c6f-4fd0-bcc4-a4a230b46964
-		sourceLineageTag: CustomerKey
-		summarizeBy: none
-		sourceColumn: CustomerKey
-
-		annotation SummarizationSetBy = Automatic
-
-	column ProductID
-		dataType: int64
-		formatString: 0
-		lineageTag: 23c37547-3732-4dca-8c29-b8ffb491a93e
-		sourceLineageTag: ProductID
-		summarizeBy: none
-		sourceColumn: ProductID
+		sourceColumn: LineNumber
 
 		annotation SummarizationSetBy = Automatic
 
 	column OrderDate
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: fce692bd-4b36-4f5e-a0f3-ea824e596b12
+		lineageTag: 47fb56ec-0277-4ac0-9b0d-6a0c0167adfa
 		sourceLineageTag: OrderDate
 		summarizeBy: none
 		sourceColumn: OrderDate
 
 		annotation SummarizationSetBy = Automatic
 
+	column DeliveryDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 907870d2-907b-485e-8dfa-4051cf4f51dd
+		sourceLineageTag: DeliveryDate
+		summarizeBy: none
+		sourceColumn: DeliveryDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 72150858-f781-4dae-bd19-becef009ff23
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: c5d79f57-991d-47c8-81aa-4e4b33da5466
+		sourceLineageTag: StoreKey
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: f57e1609-2d7e-4d62-ab2f-874a897992de
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
 	column Quantity
 		dataType: int64
 		formatString: 0
-		lineageTag: 2d46d43e-bd4d-4008-ae12-18d63e077f22
+		lineageTag: e13aacfe-414c-458a-98e1-ce213ebb01cd
 		sourceLineageTag: Quantity
 		summarizeBy: sum
 		sourceColumn: Quantity
 
 		annotation SummarizationSetBy = Automatic
 
-	column UnitPrice
+	column NetPrice
 		dataType: double
-		lineageTag: 3bdeb52a-36c7-4eb0-a2e5-25521d5d1073
-		sourceLineageTag: UnitPrice
+		lineageTag: 690ec5da-3903-4c55-a8e9-ae7d4524ff1b
+		sourceLineageTag: NetPrice
 		summarizeBy: sum
-		sourceColumn: UnitPrice
+		sourceColumn: NetPrice
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column TaxAmount
+	column UnitCost
 		dataType: double
-		lineageTag: 936195ff-d8de-438b-a3c8-1182b03579ec
-		sourceLineageTag: TaxAmount
+		lineageTag: 5f08850a-f838-4f97-82d4-5c0c52327294
+		sourceLineageTag: UnitCost
 		summarizeBy: sum
-		sourceColumn: TaxAmount
+		sourceColumn: UnitCost
 
 		annotation SummarizationSetBy = Automatic
 
@@ -105,7 +106,7 @@ table fact_sales
 
 	column Revenue
 		dataType: double
-		lineageTag: 30e2a5b5-f70d-40b5-8657-eab9c10a41ad
+		lineageTag: 62e196aa-afa8-40a1-9796-6327c2c38e0f
 		sourceLineageTag: Revenue
 		summarizeBy: sum
 		sourceColumn: Revenue
@@ -119,5 +120,5 @@ table fact_sales
 		source
 			entityName: fact_sales
 			schemaName: dbo
-			expressionSource: 'DirectLake — wh_sales'
+			expressionSource: 'DirectLake - wh_sales'
 

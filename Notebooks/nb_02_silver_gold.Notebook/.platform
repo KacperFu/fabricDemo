@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventstream",
-    "displayName": "es_bikes2"
+    "type": "Notebook",
+    "displayName": "nb_02_silver_gold",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "2d624f4e-9925-864f-4aaf-86c2c6ea79c3"
+    "logicalId": "1ca74da5-dae3-8caa-462b-82ae66026ca4"
   }
 }

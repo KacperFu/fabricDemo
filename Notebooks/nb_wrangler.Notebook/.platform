@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Notebook",
-    "displayName": "nb_bronze"
+    "displayName": "nb_wrangler"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "baf86bed-6ab2-820f-4cb3-3e22f0a6ee83"
+    "logicalId": "4f9d8aa3-0f99-87d1-48f6-fb2a1c415366"
   }
 }

@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "KQLDatabase",
-    "displayName": "eh_telemtry"
+    "type": "Eventhouse",
+    "displayName": "ev_bikes",
+    "description": "ev_bikes"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "8c36574f-eef5-8b9f-4d46-afaf1d3cd48f"
+    "logicalId": "83275587-436f-8579-4332-c2b8f013ccab"
   }
 }

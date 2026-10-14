@@ -1,12 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventhouse",
-    "displayName": "eh_telemtry",
-    "description": "eh_telemtry"
+    "type": "Eventstream",
+    "displayName": "es_bikes_"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "8711c344-392b-a031-4d50-3288f119bc7e"
+    "logicalId": "d828ab2c-a604-960d-489f-4c0cf1c6f9c6"
   }
 }

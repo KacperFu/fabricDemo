@@ -1,0 +1,77 @@
+table dim_store
+	lineageTag: 7f5c0129-0197-4112-bc72-4fc8bca594b7
+	sourceLineageTag: [dbo].[dim_store]
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b310f377-154b-4002-957e-904ffc0b5147
+		sourceLineageTag: StoreKey
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: b1a54658-b07c-4ec0-b4c3-82730362112f
+		sourceLineageTag: Name
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: b4e66a59-d8bc-4fe8-9f62-c50df80925b0
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 7cd98ea4-025c-4b62-8778-494dcf4d3f76
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpenDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c00d4f2f-a39f-4d84-a7a0-7adb10cf41f7
+		sourceLineageTag: OpenDate
+		summarizeBy: none
+		sourceColumn: OpenDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CloseDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d3d6a210-0b52-4385-b984-971037d5f6ad
+		sourceLineageTag: CloseDate
+		summarizeBy: none
+		sourceColumn: CloseDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 4623f9f4-1183-47bf-a8eb-8709dc4d4c67
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_store = entity
+		mode: directLake
+		source
+			entityName: dim_store
+			schemaName: dbo
+			expressionSource: 'DirectLake - wh_sales'
+

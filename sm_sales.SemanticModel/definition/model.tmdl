@@ -8,12 +8,13 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DirectLake — wh_sales"]
+annotation PBI_QueryOrder = ["DirectLake - wh_sales"]
 
-annotation PBI_ProTooling = ["RemoteModeling","DirectLakeOnOneLakeCreatedInDesktop","DirectLakeOnOneLakeInWeb","WebModelingEdit"]
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit"]
 
-ref table fact_sales
-ref table dim_product
-ref table dim_date
 ref table dim_customer
+ref table dim_date
+ref table dim_product
+ref table dim_store
+ref table fact_sales
 

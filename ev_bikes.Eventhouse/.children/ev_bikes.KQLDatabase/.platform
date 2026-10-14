@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Notebook",
-    "displayName": "nb_00_explore"
+    "type": "KQLDatabase",
+    "displayName": "ev_bikes"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "b6ed540c-c654-bd5c-438d-243bd2e958af"
+    "logicalId": "da4e6bb7-3caa-9e16-4362-a610728f2477"
   }
 }
