@@ -54,3 +54,7 @@ display(pandas_df_clean)
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# MARKDOWN ********************
+
+# Testowa Komorka
