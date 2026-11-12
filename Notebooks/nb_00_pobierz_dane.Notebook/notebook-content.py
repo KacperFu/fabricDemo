@@ -8,19 +8,19 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "d7e6b174-b973-4526-b2b3-bfd5d1c5b29b",
+# META       "default_lakehouse": "54c4e96c-590e-48c4-adad-42ee7f249f24",
 # META       "default_lakehouse_name": "lh_sales",
-# META       "default_lakehouse_workspace_id": "b1104717-e924-476e-b65a-02af81596bcf",
+# META       "default_lakehouse_workspace_id": "aa37d6f8-5522-46d1-af05-8ced52a78257",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "d7e6b174-b973-4526-b2b3-bfd5d1c5b29b"
+# META           "id": "54c4e96c-590e-48c4-adad-42ee7f249f24"
 # META         }
 # META       ]
 # META     }
 # META   }
 # META }
 
-# CELL ********************
+# MARKDOWN ********************
 
 # nb_00_pobierz_dane – ćwiczenie 2.1 (M2), wdrażany na Prod w M9
 # Domyślny lakehouse notatnika: lh_sales.
@@ -29,10 +29,21 @@
 # Drugie uruchomienie nic nie pobiera – notatnik sprawdza, czy pliki już są.
 # Kod dopisany. Rozpakowanie sprawdzone lokalnie, przebieg w Fabric do próby.
 
-# %% komórka 1 – biblioteka do archiwów 7z (instaluje się w sesji notatnika)
+# CELL ********************
+
+# komórka 1 – biblioteka do archiwów 7z (instaluje się w sesji notatnika)
 %pip install py7zr
 
-# %% komórka 2 – pobranie i rozpakowanie
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# komórka 2 – pobranie i rozpakowanie
 import os, shutil, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 import py7zr
@@ -76,7 +87,16 @@ else:
     shutil.rmtree(WORK)
     print(f"gotowe: {time.time() - start:.0f} s")
 
-# %% komórka 3 – kontrola
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# komórka 3 – kontrola
 for n in FILES:
     print(f"{n:<10} {os.path.getsize(f'{TARGET}/{n}.parquet') / 1e6:>8.1f} MB")
 # oczekiwane: orders 724.3, orderrows 2906.4, customer 142.6, product 0.1, store 0.0, date 0.0

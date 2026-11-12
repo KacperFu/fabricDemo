@@ -1,0 +1,144 @@
+table gold_fact_sales
+	lineageTag: 4c3935b3-8c9a-4a05-ba4e-ee128fdc9ead
+	sourceLineageTag: [dbo].[gold_fact_sales]
+
+	measure Revenue_ = SUM(gold_fact_sales[Revenue])
+		lineageTag: 2cc64d02-774c-4a71-986b-aa82a87db036
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3d414002-be6a-46de-9683-ed1c0ef0a67e
+		sourceLineageTag: OrderKey
+		summarizeBy: count
+		sourceColumn: OrderKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 985ed82e-7cdb-4792-9045-62b4d425a3bc
+		sourceLineageTag: LineNumber
+		summarizeBy: sum
+		sourceColumn: LineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a3559046-02b3-4af7-be11-d869bb071087
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeliveryDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ec6ab156-eb35-4b78-8989-bb81fbdabaf7
+		sourceLineageTag: DeliveryDate
+		summarizeBy: none
+		sourceColumn: DeliveryDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: df1342f8-73de-464f-bcca-e023a11c07c2
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 878b2309-f07f-45c7-96f5-1f2e36c609de
+		sourceLineageTag: StoreKey
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c0fd9d95-14e1-498a-85cd-75610796d757
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b3f9775a-245a-4840-b50d-5e3f89c28dda
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column NetPrice
+		dataType: double
+		sourceProviderType: decimal(20, 5)
+		lineageTag: d32acf2e-02f6-4507-8ebd-cda3d4e67af0
+		sourceLineageTag: NetPrice
+		summarizeBy: sum
+		sourceColumn: NetPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitCost
+		dataType: double
+		sourceProviderType: decimal(20, 5)
+		lineageTag: 86381b75-6283-494e-8937-cfbc39185b3b
+		sourceLineageTag: UnitCost
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Revenue
+		dataType: double
+		sourceProviderType: decimal(18, 2)
+		lineageTag: 6d04aa87-2022-4626-a942-5b05aa97074f
+		sourceLineageTag: Revenue
+		summarizeBy: sum
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_fact_sales = entity
+		mode: directLake
+		source
+			entityName: gold_fact_sales
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
